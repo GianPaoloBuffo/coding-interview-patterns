@@ -2,6 +2,8 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea
+coding-interview-patterns.iml
 
 ### Eclipse ###
 .apt_generated
