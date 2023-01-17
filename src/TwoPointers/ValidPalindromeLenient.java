@@ -2,10 +2,6 @@ package TwoPointers;
 
 public class ValidPalindromeLenient {
 
-    public static void main(String[] args) {
-        System.out.println(isPalindrome("RACEACAR"));
-    }
-
     public static boolean isPalindrome(String s) {
         int left = 0;
         int right = s.length() - 1;
@@ -35,5 +31,9 @@ public class ValidPalindromeLenient {
         }
 
         return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isPalindrome("RACEACAR"));
     }
 }

@@ -2,6 +2,21 @@ package TwoPointers;
 
 public class ValidPalindrome {
 
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+    public static boolean isPalindrome(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+            if (s.charAt(left++) != s.charAt(right--)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         String[] testCase = {
                 "RACEACAR",
@@ -19,20 +34,5 @@ public class ValidPalindrome {
             System.out.println("\n\tIs it a palindrome?..... " + isPalindrome(testCase[k]));
             System.out.println("-".repeat(100));
         }
-    }
-
-    // Time Complexity: O(n)
-    // Space Complexity: O(1)
-    public static boolean isPalindrome(String s) {
-        int left = 0;
-        int right = s.length() - 1;
-
-        while (left < right) {
-            if (s.charAt(left++) != s.charAt(right--)) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }
