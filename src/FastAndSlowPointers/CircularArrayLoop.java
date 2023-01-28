@@ -2,6 +2,8 @@ package FastAndSlowPointers;
 
 public class CircularArrayLoop {
 
+    // Time Complexity: O(n) ?
+    // Space Complexity: O(1)
     public static boolean circularArrayLoop(int[] nums) {
         int old;
         int iterations = 0;
