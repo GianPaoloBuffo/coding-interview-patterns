@@ -4,6 +4,8 @@ import java.util.*;
 
 public class MaximumInSlidingWindow {
 
+    // Time Complexity: O(n)
+    // Space Complexity: O(windowSize)
     public static List<Integer> findMaxSlidingWindow(List<Integer> nums, int windowSize) {
         List<Integer> result = new ArrayList<>();
         Deque<Integer> window = new ArrayDeque<>();
