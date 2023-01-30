@@ -15,21 +15,21 @@ public class CircularArrayLoop {
 
             old = slow;
             slow = movePointer(slow, nums[slow], max);
-            if (oppositeSigns(nums[old], nums[slow])) {
+            if (isInvalidSequence(nums, old, slow)) {
                 fast = slow = iterations;
                 continue;
             }
 
             old = fast;
             fast = movePointer(fast, nums[fast], max);
-            if (oppositeSigns(nums[old], nums[fast])) {
+            if (isInvalidSequence(nums, old, fast)) {
                 fast = slow = iterations;
                 continue;
             }
 
             old = fast;
             fast = movePointer(fast, nums[fast], max);
-            if (oppositeSigns(nums[old], nums[fast])) {
+            if (isInvalidSequence(nums, old, fast)) {
                 fast = slow = iterations;
                 continue;
             }
@@ -46,12 +46,20 @@ public class CircularArrayLoop {
         return Math.floorMod(pointer + moves, max);
     }
 
+    private static boolean isInvalidSequence(int[] nums, int old, int pointer) {
+        return oppositeSigns(nums[old], nums[pointer]) || isSequenceOfOne(nums, pointer);
+    }
+
     private static boolean oppositeSigns(int num1, int num2) {
         return (num1 >= 0) == (num2 < 0);
     }
 
+    private static boolean isSequenceOfOne(int[] nums, int pointer) {
+        return Math.abs(nums[pointer] % nums.length) == 0;
+    }
+
     public static void main(String[] args) {
-        int[] arr = {-1, -1, -1, -1, -1, -1};
+        int[] arr = {-1, -2, -3, -4, -5, 6};
         System.out.println(circularArrayLoop(arr));
     }
 }
