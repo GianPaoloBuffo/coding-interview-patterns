@@ -49,9 +49,11 @@ public class MinimumWindowSubsequence {
 
                 // At this point, we've found the FIRST occurrence of the subsequence (iterating forward)
                 // We need to check the rest of str1 from this point (for smaller subsequences), so we reset indexS2
-                // and start iterating from the end of our current subsequence
-                indexS1 = end;
                 indexS2 = 0;
+
+                // We also need to start checking from within the start of our current subsequence,
+                // because the next valid subsequence could start within this one
+                indexS1 = start;
             }
 
             indexS1++;
@@ -70,7 +72,8 @@ public class MinimumWindowSubsequence {
                 "alpha",
                 "beta",
                 "asd",
-                "abcd"
+                "abcd",
+                "azstaszaztf"
         };
         String[] str2 = {
                 "bde",
@@ -81,7 +84,8 @@ public class MinimumWindowSubsequence {
                 "la",
                 "ab",
                 "as",
-                "pp"
+                "pp",
+                "saz"
         };
         for (int i = 0; i < str1.length; i++) {
             System.out.println(i + 1 + ".\tInput String: " + "(" + str1[i] + ", " + str2[i] + ")");
